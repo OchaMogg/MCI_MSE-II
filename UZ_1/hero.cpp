@@ -28,11 +28,8 @@ void sellItem(Hero_t* hero, int index){
     if(hero->hero_items[index].isValid){
         hero->hero_items[index].isValid = false;
         hero->gold += hero->hero_items[index].gold;
-        std::cout << "Gegenstand " << hero->hero_items[index].name << " wurde verkauft. " << hero->hero_name << " hat nun " << hero->gold << " Goldstücke." << std::endl;
-    } else {
-        std::cout << "Item nicht gefunden!";
+        std::cout << "Gegenstand " << hero->hero_items[index].name << " wurde verkauft. " << hero->hero_name << " bezitzt nun " << hero->gold << " Goldstücke." << std::endl;
     }
-
 }
 
 
@@ -56,24 +53,4 @@ bool fight(Hero_t* hero, Character_t* enemy){
     } else {
         return true;
     }
-    
-    return false;
 }
-
-/************************************************
- Tests:
-
-     int min = 30;
-    int max = 0;
-
-    for(int j = 0; j < 1000; j++){
-        int dmg = 15 + rand()%11;
-        if(dmg < min){min = dmg;}
-        if(dmg > max){max = dmg;}
-    }
-
-    std::cout << "der min Schaden ist: " << min << std::endl;
-    std::cout << "der max Schaden ist: " << max << std::endl;
-
-    return 0;
- ************************************************/
