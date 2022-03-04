@@ -21,14 +21,16 @@ class Character
     public:
 
         void init_Character(const std::string name, const int health, const int gold);
+        void init_Item_Slots();
         void attack(Hero &hero);
-        int add_Inventar_Item(const Item& item);
+        int add_Inventar_Item(Item& item);
         Item* remove_Inventar_Item(const int slot);
 
         
         void set_LP(const int damage);
         int get_LP();
         std::string get_name();
+        Item* get_Inventory(int index);
 
 };
 
